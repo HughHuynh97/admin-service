@@ -60,6 +60,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/crawl-service:latest     
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/admin-service:latest     
           
           
