@@ -1,0 +1,16 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /admin-service
+spring:
+  task:
+    scheduling:
+      pool:
+        size: 10
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:dev}?createDatabaseIfNotExist=true
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:tripro123}
+    driverClassName: com.mysql.cj.jdbc.Driver
+jwt:
+  secret: trideptrai
