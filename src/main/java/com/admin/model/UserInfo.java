@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @NoArgsConstructor
@@ -17,6 +20,7 @@ public class UserInfo {
     private String displayName;
     private String image;
     private Integer status;
+    private List<Long> roleIds;
 
     public UserInfo(ResultSet rs) throws SQLException {
         this.userId = rs.getLong("user_id");
@@ -24,5 +28,6 @@ public class UserInfo {
         this.password = rs.getString("password");
         this.displayName = rs.getString("display_name");
         this.status = rs.getInt("status");
+        this.roleIds = Arrays.stream(rs.getString("role_ids").split(",")).map(Long::parseLong).collect(Collectors.toList());
     }
 }

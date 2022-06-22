@@ -13,4 +13,4 @@ spring:
     password: ${MYSQL_PASSWORD:tripro123}
     driverClassName: com.mysql.cj.jdbc.Driver
 jwt:
-  secret: trideptrai
+  secret: ${SECRET_KEY:trideptrai}
